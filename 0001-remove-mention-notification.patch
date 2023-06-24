@@ -1,0 +1,37 @@
+From d0e15f3123a102d5dcecdf804c8421a359706969 Mon Sep 17 00:00:00 2001
+From: creamlike1024 <creamlike1024@outlook.com>
+Date: Sun, 25 Jun 2023 02:52:06 +0800
+Subject: [PATCH] remove mention notification
+
+---
+ packages/frontend/src/pages/notifications.vue | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/packages/frontend/src/pages/notifications.vue b/packages/frontend/src/pages/notifications.vue
+index 8196f9186..f41c1e1e9 100644
+--- a/packages/frontend/src/pages/notifications.vue
++++ b/packages/frontend/src/pages/notifications.vue
+@@ -5,9 +5,6 @@
+ 		<div v-if="tab === 'all'">
+ 			<XNotifications class="notifications" :includeTypes="includeTypes"/>
+ 		</div>
+-		<div v-else-if="tab === 'mentions'">
+-			<MkNotes :pagination="mentionsPagination"/>
+-		</div>
+ 		<div v-else-if="tab === 'directNotes'">
+ 			<MkNotes :pagination="directNotesPagination"/>
+ 		</div>
+@@ -75,10 +72,6 @@ const headerTabs = $computed(() => [{
+ 	key: 'all',
+ 	title: i18n.ts.all,
+ 	icon: 'ti ti-point',
+-}, {
+-	key: 'mentions',
+-	title: i18n.ts.mentions,
+-	icon: 'ti ti-at',
+ }, {
+ 	key: 'directNotes',
+ 	title: i18n.ts.directNotes,
+-- 
+2.34.1
+

@@ -1,0 +1,24 @@
+From 5d2bd7b2cb358a05c9c6532c60ce1d35516ae75e Mon Sep 17 00:00:00 2001
+From: creamlike1024 <creamlike1024@outlook.com>
+Date: Sun, 25 Jun 2023 03:26:48 +0800
+Subject: [PATCH] remove "Look for another instance" button
+
+---
+ packages/frontend/src/components/MkVisitorDashboard.vue | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/packages/frontend/src/components/MkVisitorDashboard.vue b/packages/frontend/src/components/MkVisitorDashboard.vue
+index 9566cc651..5da53e92a 100644
+--- a/packages/frontend/src/components/MkVisitorDashboard.vue
++++ b/packages/frontend/src/components/MkVisitorDashboard.vue
+@@ -18,7 +18,6 @@
+ 			</div>
+ 			<div class="_gaps_s" :class="$style.mainActions">
+ 				<MkButton :class="$style.mainAction" full rounded gradate data-cy-signup style="margin-right: 12px;" @click="signup()">{{ i18n.ts.joinThisServer }}</MkButton>
+-				<MkButton :class="$style.mainAction" full rounded @click="exploreOtherServers()">{{ i18n.ts.exploreOtherServers }}</MkButton>
+ 				<MkButton :class="$style.mainAction" full rounded data-cy-signin @click="signin()">{{ i18n.ts.login }}</MkButton>
+ 			</div>
+ 		</div>
+-- 
+2.34.1
+

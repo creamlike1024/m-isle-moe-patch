@@ -1,0 +1,33 @@
+From 9f3b6a7c8dde5222ee9ecc3ca884dfcd48d7fe49 Mon Sep 17 00:00:00 2001
+From: creamlike1024 <creamlike1024@outlook.com>
+Date: Sun, 25 Jun 2023 03:10:15 +0800
+Subject: [PATCH] replace special thanks to site patch info
+
+---
+ packages/frontend/src/pages/about-misskey.vue | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/packages/frontend/src/pages/about-misskey.vue b/packages/frontend/src/pages/about-misskey.vue
+index 0017145fa..0ecbc4db0 100644
+--- a/packages/frontend/src/pages/about-misskey.vue
++++ b/packages/frontend/src/pages/about-misskey.vue
+@@ -85,13 +85,13 @@
+ 					<p>{{ i18n.ts._aboutMisskey.morePatrons }}</p>
+ 				</FormSection>
+ 				<FormSection>
+-					<template #label>Special thanks</template>
++					<template #label>About this site</template>
+ 					<div class="_gaps" style="text-align: center;">
+ 						<div>
+-							<a style="display: inline-block;" class="masknetwork" title="Mask Network" href="https://mask.io/" target="_blank"><img width="200" src="https://misskey-hub.net/sponsors/masknetwork.png" alt="Mask Network"></a>
++							<a style="display: inline-block;" class="m-isle-moe" title="萌岛"><img width="100" src="https://oss.isle.moe/files/08356d3c-6cc6-4f16-9163-deb4ec7d7117.png" alt="萌岛"></a>
+ 						</div>
+ 						<div>
+-							<a style="display: inline-block;" class="dcadvirth" title="DC Advirth" href="https://www.dotchain.ltd/advirth" target="_blank"><img width="200" src="https://misskey-hub.net/sponsors/dcadvirth.png" alt="DC Advirth"></a>
++							<a style="display: inline-block;" class="patch" title="查看本站应用的补丁" href="https://github.com/creamlike1024/m-isle-moe-patch" target="_blank"></a>
+ 						</div>
+ 					</div>
+ 				</FormSection>
+-- 
+2.34.1
+
