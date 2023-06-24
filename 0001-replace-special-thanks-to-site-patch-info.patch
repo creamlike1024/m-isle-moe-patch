@@ -1,17 +1,17 @@
-From 9f3b6a7c8dde5222ee9ecc3ca884dfcd48d7fe49 Mon Sep 17 00:00:00 2001
+From 7c70608851b77fe4628262a772c45e10f390cb86 Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Sun, 25 Jun 2023 03:10:15 +0800
+Date: Sun, 25 Jun 2023 07:29:15 +0800
 Subject: [PATCH] replace special thanks to site patch info
 
 ---
- packages/frontend/src/pages/about-misskey.vue | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ packages/frontend/src/pages/about-misskey.vue | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
 
 diff --git a/packages/frontend/src/pages/about-misskey.vue b/packages/frontend/src/pages/about-misskey.vue
-index 0017145fa..0ecbc4db0 100644
+index 0017145fa..58e4f74d7 100644
 --- a/packages/frontend/src/pages/about-misskey.vue
 +++ b/packages/frontend/src/pages/about-misskey.vue
-@@ -85,13 +85,13 @@
+@@ -85,15 +85,19 @@
  					<p>{{ i18n.ts._aboutMisskey.morePatrons }}</p>
  				</FormSection>
  				<FormSection>
@@ -20,14 +20,22 @@ index 0017145fa..0ecbc4db0 100644
  					<div class="_gaps" style="text-align: center;">
  						<div>
 -							<a style="display: inline-block;" class="masknetwork" title="Mask Network" href="https://mask.io/" target="_blank"><img width="200" src="https://misskey-hub.net/sponsors/masknetwork.png" alt="Mask Network"></a>
-+							<a style="display: inline-block;" class="m-isle-moe" title="萌岛"><img width="100" src="https://oss.isle.moe/files/08356d3c-6cc6-4f16-9163-deb4ec7d7117.png" alt="萌岛"></a>
- 						</div>
- 						<div>
+-						</div>
+-						<div>
 -							<a style="display: inline-block;" class="dcadvirth" title="DC Advirth" href="https://www.dotchain.ltd/advirth" target="_blank"><img width="200" src="https://misskey-hub.net/sponsors/dcadvirth.png" alt="DC Advirth"></a>
-+							<a style="display: inline-block;" class="patch" title="查看本站应用的补丁" href="https://github.com/creamlike1024/m-isle-moe-patch" target="_blank"></a>
++							<a style="display: inline-block;" class="m-isle-moe"><img width="90" src="https://oss.isle.moe/files/08356d3c-6cc6-4f16-9163-deb4ec7d7117.png" alt="萌岛"></a>
  						</div>
  					</div>
++					<div class="_formLinks">
++						<FormLink to="https://github.com/creamlike1024/m-isle-moe-patch" external>
++							<template #icon><i class="ti ti-code"></i></template>
++							{{ "修改内容" }}
++							<template #suffix>GitHub</template>
++						</FormLink>
++					</div>
  				</FormSection>
+ 			</div>
+ 		</MkSpacer>
 -- 
 2.34.1
 
