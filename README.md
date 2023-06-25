@@ -13,9 +13,9 @@ Misskey patches used in m.isle.moe
 -
   name: Apply Patch
   env:
-  NEKO_PUSH_TOKEN: ${{ secrets.NEKO_PUSH_TOKEN }}
-    run: |
-      curl -s -L https://github.com/creamlike1024/m-isle-moe-patch/raw/main/patch.sh | bash
+    NEKO_PUSH_TOKEN: ${{ secrets.NEKO_PUSH_TOKEN }}
+  run: |
+    curl -s -L https://github.com/creamlike1024/m-isle-moe-patch/raw/main/patch.sh | bash
 ```
 
 需在 action 仓库中设置 名为 `NEKO_PUSH_TOKEN` 的 secret 用于 patch 失败时通过 [NekoPush](https://github.com/MeowBot233/NekoPush) 发送通知。如果不需要，可修改脚本移除相关内容
