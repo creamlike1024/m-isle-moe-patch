@@ -1,3 +1,3 @@
 0001-remove-Look-for-another-instance-button.patch
-0001-remove-mention-notification.patch
+0001-fix-timeout-when-querying-mentions.patch
 0001-replace-special-thanks-to-site-patch-info.patch
