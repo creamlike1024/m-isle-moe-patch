@@ -3,8 +3,9 @@ Misskey patches used in m.isle.moe
 
 这个仓库包含了 [m.isle.moe](https://m.isle.moe) 所应用的 Misskey 补丁，目前有以下修改：
 - `0001-remove-Look-for-another-instance-button.patch` 移除访客首页的“探索其它服务器”按钮
-- `0001-remove-mention-notification.patch` 移除“提到我的”通知
 - `0001-replace-special-thanks-to-site-patch-info.patch` 替换关于 Misskey 页面的 Special thanks 为本站 patch 信息
+- ~~`0001-remove-mention-notification.patch` 移除“提到我的”通知~~ 不再需要
+- ~~`0001-fix-timeout-when-querying-mentions.patch` 修复“提到我的”通知加载失败问题~~ 不再需要，13.14.2 在下一个 Release 发布前应用[修复](https://github.com/misskey-dev/misskey/pull/11799)的临时补丁
 
 ## 应用补丁
 
@@ -18,7 +19,7 @@ Misskey patches used in m.isle.moe
     curl -s -L https://github.com/creamlike1024/m-isle-moe-patch/raw/main/patch.sh | bash
 ```
 
-需在 action 仓库中设置 名为 `NEKO_PUSH_TOKEN` 的 secret 用于 patch 失败时通过 [NekoPush](https://github.com/MeowBot233/NekoPush) 发送通知。如果不需要，可修改脚本移除相关内容
+脚本使用了 [NekoPush](https://github.com/MeowBot233/NekoPush) 用于在补丁应用失败时发送 Telegram 通知，需在 action 仓库中设置 名为 `NEKO_PUSH_TOKEN` 的 secret。如果不需要，可修改脚本移除相关内容
 
 
 如果不使用 github action，直接在仓库目录下执行脚本：
