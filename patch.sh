@@ -3,7 +3,7 @@
 # 变量设置
 PATCH_REPO="https://github.com/creamlike1024/m-isle-moe-patch"
 REPO_BRANCH="main"
-NEKO_PUSH_URL="https://push.meowbot.page"
+NEKO_PUSH_URL="https://push_agent.meowbot233.workers.dev"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
