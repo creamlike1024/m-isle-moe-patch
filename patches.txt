@@ -1,2 +1,4 @@
 0001-remove-Look-for-another-instance-button.patch
 0001-replace-special-thanks-to-site-patch-info.patch
+0001-auto-extend-note-content.patch
+
