@@ -1,30 +1,21 @@
-From f7273e43c0a0398e91138bb3d24780bb8915ada7 Mon Sep 17 00:00:00 2001
-From: creamlike1024 <creamlike1024@outlook.com>
-Date: Wed, 8 Nov 2023 21:01:30 +0800
-Subject: [PATCH] update 0001-replace-special-thanks-to-site-patch-info.patch
-
----
- packages/frontend/src/pages/about-misskey.vue | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
-
 diff --git a/packages/frontend/src/pages/about-misskey.vue b/packages/frontend/src/pages/about-misskey.vue
-index 9fe7f7f..d1a8000 100644
+index b55ae22..50fb60a 100644
 --- a/packages/frontend/src/pages/about-misskey.vue
 +++ b/packages/frontend/src/pages/about-misskey.vue
 @@ -34,6 +34,11 @@ SPDX-License-Identifier: AGPL-3.0-only
- 							{{ i18n.ts._aboutMisskey.source }}
+ 							{{ i18n.ts._aboutMisskey.source }} ({{ i18n.ts._aboutMisskey.original }})
  							<template #suffix>GitHub</template>
  						</FormLink>
 +						<FormLink to="https://github.com/creamlike1024/m-isle-moe-patch" external>
-+							<template #icon><i class="ti ti-code"></i></template>
-+							{{ "修改内容" }}
-+							<template #suffix>GitHub</template>
-+						</FormLink>
+++							<template #icon><i class="ti ti-code"></i></template>
+++							{{ "修改内容" }}
+++							<template #suffix>GitHub</template>
+++						</FormLink>
  						<FormLink to="https://crowdin.com/project/misskey" external>
  							<template #icon><i class="ti ti-language-hiragana"></i></template>
  							{{ i18n.ts._aboutMisskey.translation }}
-@@ -90,16 +95,10 @@ SPDX-License-Identifier: AGPL-3.0-only
- 					<MkLink url="https://github.com/misskey-dev/misskey/graphs/contributors">{{ i18n.ts._aboutMisskey.allContributors }}</MkLink>
+@@ -99,16 +104,10 @@ SPDX-License-Identifier: AGPL-3.0-only
+ 					</div>
  				</FormSection>
  				<FormSection>
 -					<template #label>Special thanks</template>
@@ -42,6 +33,3 @@ index 9fe7f7f..d1a8000 100644
  						</div>
  					</div>
  				</FormSection>
--- 
-2.34.1
-
