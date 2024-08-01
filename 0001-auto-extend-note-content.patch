@@ -1,18 +1,18 @@
-From ee0f010f769034b49a90cba43301e02b7af0bc17 Mon Sep 17 00:00:00 2001
+From 3b5191fc44114424a3555d55b692d539eab43b4f Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Sun, 1 Oct 2023 12:15:12 +0800
+Date: Thu, 1 Aug 2024 13:50:53 +0800
 Subject: [PATCH] auto extend note content
 
 ---
- .../src/components/MkNoteDetailed.vue         | 22 ++++++++++++-------
- 1 file changed, 14 insertions(+), 8 deletions(-)
+ .../src/components/MkNoteDetailed.vue         | 23 ++++++++++++-------
+ 1 file changed, 15 insertions(+), 8 deletions(-)
 
 diff --git a/packages/frontend/src/components/MkNoteDetailed.vue b/packages/frontend/src/components/MkNoteDetailed.vue
-index ab8886e8b..7c2a7a164 100644
+index 9a3e59578..2437eb6e9 100644
 --- a/packages/frontend/src/components/MkNoteDetailed.vue
 +++ b/packages/frontend/src/components/MkNoteDetailed.vue
-@@ -12,9 +12,9 @@ SPDX-License-Identifier: AGPL-3.0-only
- 	:class="$style.root"
+@@ -13,9 +13,9 @@ SPDX-License-Identifier: AGPL-3.0-only
+ 	:tabindex="isDeleted ? '-1' : '0'"
  >
  	<div v-if="appearNote.reply && appearNote.reply.replyId">
 -		<div v-if="!conversationLoaded" style="padding: 16px">
@@ -23,10 +23,10 @@ index ab8886e8b..7c2a7a164 100644
  		<MkNoteSub v-for="note in conversation" :key="note.id" :class="$style.replyToMore" :note="note"/>
  	</div>
  	<MkNoteSub v-if="appearNote.reply" :note="appearNote.reply" :class="$style.replyTo"/>
-@@ -140,9 +140,9 @@ SPDX-License-Identifier: AGPL-3.0-only
+@@ -149,9 +149,9 @@ SPDX-License-Identifier: AGPL-3.0-only
  	</div>
  	<div>
- 		<div v-if="tab === 'replies'" :class="$style.tab_replies">
+ 		<div v-if="tab === 'replies'">
 -			<div v-if="!repliesLoaded" style="padding: 16px">
 +			<!-- <div v-if="!repliesLoaded" style="padding: 16px">
  				<MkButton style="margin: 0 auto;" primary rounded @click="loadReplies">{{ i18n.ts.loadReplies }}</MkButton>
@@ -35,30 +35,33 @@ index ab8886e8b..7c2a7a164 100644
  			<MkNoteSub v-for="note in replies" :key="note.id" :note="note" :class="$style.reply" :detail="true"/>
  		</div>
  		<div v-else-if="tab === 'renotes'" :class="$style.tab_renotes">
-@@ -498,9 +498,9 @@ function blur() {
- 	el.value.blur();
+@@ -527,10 +527,10 @@ function blur() {
+ 	rootEl.value?.blur();
  }
  
 -const repliesLoaded = ref(false);
 +// const repliesLoaded = ref(false);
+ 
  function loadReplies() {
 -	repliesLoaded.value = true;
 +	// repliesLoaded.value = true;
- 	os.api('notes/children', {
- 		noteId: appearNote.id,
+ 	misskeyApi('notes/children', {
+ 		noteId: appearNote.value.id,
  		limit: 30,
-@@ -509,15 +509,21 @@ function loadReplies() {
+@@ -539,10 +539,10 @@ function loadReplies() {
  	});
  }
  
 -const conversationLoaded = ref(false);
 +// const conversationLoaded = ref(false);
+ 
  function loadConversation() {
 -	conversationLoaded.value = true;
 +	// conversationLoaded.value = true;
- 	os.api('notes/conversation', {
- 		noteId: appearNote.replyId,
- 	}).then(res => {
+ 	if (appearNote.value.replyId == null) return;
+ 	misskeyApi('notes/conversation', {
+ 		noteId: appearNote.value.replyId,
+@@ -550,6 +550,13 @@ function loadConversation() {
  		conversation.value = res.reverse();
  	});
  }
@@ -68,9 +71,10 @@ index ab8886e8b..7c2a7a164 100644
 +	loadReplies();
 +	loadConversation();
 +});
++
  </script>
  
  <style lang="scss" module>
 -- 
-2.34.1
+2.46.0
 
