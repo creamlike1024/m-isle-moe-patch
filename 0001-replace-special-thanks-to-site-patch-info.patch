@@ -1,14 +1,14 @@
-From 24bc809e1b9f5ab203af78161895f8510a151ea5 Mon Sep 17 00:00:00 2001
+From ae48a5b5a6f78339e665914993eecd0d496f1300 Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Thu, 1 Aug 2024 13:37:27 +0800
-Subject: [PATCH] replace special thanks
+Date: Sun, 9 Mar 2025 23:51:48 +0800
+Subject: [PATCH] replace-special-thanks-to-site-patch-info
 
 ---
- packages/frontend/src/pages/about-misskey.vue | 20 ++++++++-----------
- 1 file changed, 8 insertions(+), 12 deletions(-)
+ packages/frontend/src/pages/about-misskey.vue | 23 +++++++------------
+ 1 file changed, 8 insertions(+), 15 deletions(-)
 
 diff --git a/packages/frontend/src/pages/about-misskey.vue b/packages/frontend/src/pages/about-misskey.vue
-index 8db71c888..fe10c8ca3 100644
+index d734ea6..20cc862 100644
 --- a/packages/frontend/src/pages/about-misskey.vue
 +++ b/packages/frontend/src/pages/about-misskey.vue
 @@ -34,6 +34,11 @@ SPDX-License-Identifier: AGPL-3.0-only
@@ -23,15 +23,13 @@ index 8db71c888..fe10c8ca3 100644
  						<FormLink to="https://crowdin.com/project/misskey" external>
  							<template #icon><i class="ti ti-language-hiragana"></i></template>
  							{{ i18n.ts._aboutMisskey.translation }}
-@@ -99,19 +104,10 @@ SPDX-License-Identifier: AGPL-3.0-only
+@@ -95,22 +100,10 @@ SPDX-License-Identifier: AGPL-3.0-only
  					</div>
  				</FormSection>
  				<FormSection>
 -					<template #label>Special thanks</template>
 -					<div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(130px, 1fr));grid-gap:24px;align-items:center;">
-+					<template #label>About this site</template>
-+					<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 24px;">
- 						<div>
+-						<div>
 -							<a style="display: inline-block;" class="masknetwork" title="Mask Network" href="https://mask.io/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/masknetwork.png" alt="Mask Network"></a>
 -						</div>
 -						<div>
@@ -42,10 +40,15 @@ index 8db71c888..fe10c8ca3 100644
 -						</div>
 -						<div>
 -							<a style="display: inline-block;" class="pepabo" title="GMO Pepabo" href="https://pepabo.com/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/gmo_pepabo.svg" alt="GMO Pepabo"></a>
+-						</div>
++					<template #label>About this site</template>
++					<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 24px;">
+ 						<div>
+-							<a style="display: inline-block;" class="purpledotdigital" title="Purple Dot Digital" href="https://purpledotdigital.com/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/purple-dot-digital.jpg" alt="Purple Dot Digital"></a>
 +							<a style="display: inline-block;" class="m-isle-moe" title="萌岛"><img style="width: 30%;" src="https://oss.isle.moe/files/77c31e82-aa87-463e-b042-fef30638fe5a.png" alt="萌岛"></a>
  						</div>
  					</div>
  				</FormSection>
 -- 
-2.46.0
+2.39.5 (Apple Git-154)
 
