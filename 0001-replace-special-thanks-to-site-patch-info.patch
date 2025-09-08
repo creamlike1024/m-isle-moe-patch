@@ -1,17 +1,17 @@
-From ae48a5b5a6f78339e665914993eecd0d496f1300 Mon Sep 17 00:00:00 2001
+From 33449e9b7456451acbab1024b4e5cb178830a487 Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Sun, 9 Mar 2025 23:51:48 +0800
-Subject: [PATCH] replace-special-thanks-to-site-patch-info
+Date: Tue, 9 Sep 2025 00:26:28 +0800
+Subject: [PATCH] replace special thanks to site patch info
 
 ---
- packages/frontend/src/pages/about-misskey.vue | 23 +++++++------------
- 1 file changed, 8 insertions(+), 15 deletions(-)
+ packages/frontend/src/pages/about-misskey.vue | 31 +++++--------------
+ 1 file changed, 8 insertions(+), 23 deletions(-)
 
 diff --git a/packages/frontend/src/pages/about-misskey.vue b/packages/frontend/src/pages/about-misskey.vue
-index d734ea6..20cc862 100644
+index a481972..0e2e881 100644
 --- a/packages/frontend/src/pages/about-misskey.vue
 +++ b/packages/frontend/src/pages/about-misskey.vue
-@@ -34,6 +34,11 @@ SPDX-License-Identifier: AGPL-3.0-only
+@@ -33,16 +33,16 @@ SPDX-License-Identifier: AGPL-3.0-only
  							{{ i18n.ts._aboutMisskey.source }} ({{ i18n.ts._aboutMisskey.original }})
  							<template #suffix>GitHub</template>
  						</FormLink>
@@ -23,7 +23,17 @@ index d734ea6..20cc862 100644
  						<FormLink to="https://crowdin.com/project/misskey" external>
  							<template #icon><i class="ti ti-language-hiragana"></i></template>
  							{{ i18n.ts._aboutMisskey.translation }}
-@@ -95,22 +100,10 @@ SPDX-License-Identifier: AGPL-3.0-only
+ 							<template #suffix>Crowdin</template>
+ 						</FormLink>
+-						<FormLink to="https://www.patreon.com/syuilo" external>
+-							<template #icon><i class="ti ti-pig-money"></i></template>
+-							{{ i18n.ts._aboutMisskey.donate }}
+-							<template #suffix>Patreon</template>
+-						</FormLink>
+ 					</div>
+ 				</FormSection>
+ 				<FormSection v-if="instance.repositoryUrl !== 'https://github.com/misskey-dev/misskey'">
+@@ -94,25 +94,10 @@ SPDX-License-Identifier: AGPL-3.0-only
  					</div>
  				</FormSection>
  				<FormSection>
@@ -41,10 +51,13 @@ index d734ea6..20cc862 100644
 -						<div>
 -							<a style="display: inline-block;" class="pepabo" title="GMO Pepabo" href="https://pepabo.com/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/gmo_pepabo.svg" alt="GMO Pepabo"></a>
 -						</div>
+-						<div>
+-							<a style="display: inline-block;" class="purpledotdigital" title="Purple Dot Digital" href="https://purpledotdigital.com/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/purple-dot-digital.jpg" alt="Purple Dot Digital"></a>
+-						</div>
 +					<template #label>About this site</template>
 +					<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 24px;">
  						<div>
--							<a style="display: inline-block;" class="purpledotdigital" title="Purple Dot Digital" href="https://purpledotdigital.com/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/purple-dot-digital.jpg" alt="Purple Dot Digital"></a>
+-							<a style="display: inline-block;" class="sads-llc" title="合同会社サッズ" href="https://sads-llc.co.jp/" target="_blank"><img style="width: 100%;" src="https://assets.misskey-hub.net/sponsors/sads-llc.png" alt="合同会社サッズ"></a>
 +							<a style="display: inline-block;" class="m-isle-moe" title="萌岛"><img style="width: 30%;" src="https://oss.isle.moe/files/77c31e82-aa87-463e-b042-fef30638fe5a.png" alt="萌岛"></a>
  						</div>
  					</div>
