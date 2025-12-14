@@ -1,6 +1,6 @@
-From 56f47bb5357324d1dcb98ad7927af4772214a254 Mon Sep 17 00:00:00 2001
+From c1d8cc3f2fe35d506970b4f9546f125039134f16 Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Tue, 9 Sep 2025 00:20:37 +0800
+Date: Sun, 14 Dec 2025 19:39:58 +0800
 Subject: [PATCH] auto extend note content
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] auto extend note content
  1 file changed, 15 insertions(+), 8 deletions(-)
 
 diff --git a/packages/frontend/src/components/MkNoteDetailed.vue b/packages/frontend/src/components/MkNoteDetailed.vue
-index 48fd990..7c755de 100644
+index 47bf365..c7533b2 100644
 --- a/packages/frontend/src/components/MkNoteDetailed.vue
 +++ b/packages/frontend/src/components/MkNoteDetailed.vue
 @@ -12,9 +12,9 @@ SPDX-License-Identifier: AGPL-3.0-only
@@ -16,26 +16,26 @@ index 48fd990..7c755de 100644
  >
  	<div v-if="appearNote.reply && appearNote.reply.replyId">
 -		<div v-if="!conversationLoaded" style="padding: 16px">
-+		<!-- div v-if="!conversationLoaded" style="padding: 16px">
++		<!-- <div v-if="!conversationLoaded" style="padding: 16px">
  			<MkButton style="margin: 0 auto;" primary rounded @click="loadConversation">{{ i18n.ts.loadConversation }}</MkButton>
 -		</div>
 +		</div> -->
  		<MkNoteSub v-for="note in conversation" :key="note.id" :class="$style.replyToMore" :note="note"/>
  	</div>
  	<MkNoteSub v-if="appearNote.replyId" :note="appearNote.reply" :class="$style.replyTo"/>
-@@ -181,9 +181,9 @@ SPDX-License-Identifier: AGPL-3.0-only
- 	</div>
- 	<div>
- 		<div v-if="tab === 'replies'">
--			<div v-if="!repliesLoaded" style="padding: 16px">
-+			<!-- div v-if="!repliesLoaded" style="padding: 16px">
- 				<MkButton style="margin: 0 auto;" primary rounded @click="loadReplies">{{ i18n.ts.loadReplies }}</MkButton>
--			</div>
-+			</div> -->
- 			<MkNoteSub v-for="note in replies" :key="note.id" :note="note" :class="$style.reply" :detail="true"/>
+@@ -185,9 +185,9 @@ SPDX-License-Identifier: AGPL-3.0-only
  		</div>
- 		<div v-else-if="tab === 'renotes'" :class="$style.tab_renotes">
-@@ -584,10 +584,10 @@ function blur() {
+ 		<div>
+ 			<div v-if="tab === 'replies'">
+-				<div v-if="!repliesLoaded" style="padding: 16px">
++				<!-- <div v-if="!repliesLoaded" style="padding: 16px">
+ 					<MkButton style="margin: 0 auto;" primary rounded @click="loadReplies">{{ i18n.ts.loadReplies }}</MkButton>
+-				</div>
++				</div> -->
+ 				<MkNoteSub v-for="note in replies" :key="note.id" :note="note" :class="$style.reply" :detail="true"/>
+ 			</div>
+ 			<div v-else-if="tab === 'renotes'" :class="$style.tab_renotes">
+@@ -594,10 +594,10 @@ function blur() {
  	rootEl.value?.blur();
  }
  
@@ -48,7 +48,7 @@ index 48fd990..7c755de 100644
  	misskeyApi('notes/children', {
  		noteId: appearNote.id,
  		limit: 30,
-@@ -596,10 +596,10 @@ function loadReplies() {
+@@ -606,10 +606,10 @@ function loadReplies() {
  	});
  }
  
@@ -61,7 +61,7 @@ index 48fd990..7c755de 100644
  	if (appearNote.replyId == null) return;
  	misskeyApi('notes/conversation', {
  		noteId: appearNote.replyId,
-@@ -607,6 +607,13 @@ function loadConversation() {
+@@ -617,6 +617,13 @@ function loadConversation() {
  		conversation.value = res.reverse();
  	});
  }
@@ -76,5 +76,5 @@ index 48fd990..7c755de 100644
  
  <style lang="scss" module>
 -- 
-2.39.5 (Apple Git-154)
+2.50.1 (Apple Git-155)
 
