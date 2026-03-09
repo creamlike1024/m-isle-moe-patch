@@ -1,14 +1,14 @@
-From c1d8cc3f2fe35d506970b4f9546f125039134f16 Mon Sep 17 00:00:00 2001
+From 40ac18e32c048d57a03ad9f82a48978843b87b94 Mon Sep 17 00:00:00 2001
 From: creamlike1024 <creamlike1024@outlook.com>
-Date: Sun, 14 Dec 2025 19:39:58 +0800
+Date: Mon, 9 Mar 2026 11:52:43 +0800
 Subject: [PATCH] auto extend note content
 
 ---
- .../src/components/MkNoteDetailed.vue         | 23 ++++++++++++-------
- 1 file changed, 15 insertions(+), 8 deletions(-)
+ .../src/components/MkNoteDetailed.vue         | 22 ++++++++++++-------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
 
 diff --git a/packages/frontend/src/components/MkNoteDetailed.vue b/packages/frontend/src/components/MkNoteDetailed.vue
-index 47bf365..c7533b2 100644
+index 083e3e5..4572925 100644
 --- a/packages/frontend/src/components/MkNoteDetailed.vue
 +++ b/packages/frontend/src/components/MkNoteDetailed.vue
 @@ -12,9 +12,9 @@ SPDX-License-Identifier: AGPL-3.0-only
@@ -22,8 +22,8 @@ index 47bf365..c7533b2 100644
 +		</div> -->
  		<MkNoteSub v-for="note in conversation" :key="note.id" :class="$style.replyToMore" :note="note"/>
  	</div>
- 	<MkNoteSub v-if="appearNote.replyId" :note="appearNote.reply" :class="$style.replyTo"/>
-@@ -185,9 +185,9 @@ SPDX-License-Identifier: AGPL-3.0-only
+ 	<MkNoteSub v-if="appearNote.replyId" :note="appearNote?.reply ?? null" :class="$style.replyTo"/>
+@@ -183,9 +183,9 @@ SPDX-License-Identifier: AGPL-3.0-only
  		</div>
  		<div>
  			<div v-if="tab === 'replies'">
@@ -35,7 +35,7 @@ index 47bf365..c7533b2 100644
  				<MkNoteSub v-for="note in replies" :key="note.id" :note="note" :class="$style.reply" :detail="true"/>
  			</div>
  			<div v-else-if="tab === 'renotes'" :class="$style.tab_renotes">
-@@ -594,10 +594,10 @@ function blur() {
+@@ -603,10 +603,10 @@ function blur() {
  	rootEl.value?.blur();
  }
  
@@ -48,7 +48,7 @@ index 47bf365..c7533b2 100644
  	misskeyApi('notes/children', {
  		noteId: appearNote.id,
  		limit: 30,
-@@ -606,10 +606,10 @@ function loadReplies() {
+@@ -615,10 +615,10 @@ function loadReplies() {
  	});
  }
  
@@ -61,7 +61,7 @@ index 47bf365..c7533b2 100644
  	if (appearNote.replyId == null) return;
  	misskeyApi('notes/conversation', {
  		noteId: appearNote.replyId,
-@@ -617,6 +617,13 @@ function loadConversation() {
+@@ -626,6 +626,12 @@ function loadConversation() {
  		conversation.value = res.reverse();
  	});
  }
@@ -71,7 +71,6 @@ index 47bf365..c7533b2 100644
 +	loadReplies();
 +	loadConversation();
 +});
-+
  </script>
  
  <style lang="scss" module>
